@@ -2935,7 +2935,7 @@ public class PhoneInterfaceManager extends ITelephony.Stub {
     public ModemActivityInfo getModemActivityInfo() {
         return (ModemActivityInfo) sendRequest(CMD_GET_MODEM_ACTIVITY_INFO, null);
     }
-
+    @Override
     public byte[] getAtr() {
         return getAtrUsingSubId(getDefaultSubscription());
     }
@@ -2958,7 +2958,4 @@ public class PhoneInterfaceManager extends ITelephony.Stub {
         return result;
     }
 
-    public int getLteOnGsmMode() {
-        return mPhone.getLteOnGsmMode();
-    }
 }
